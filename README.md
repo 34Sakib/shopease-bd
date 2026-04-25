@@ -444,12 +444,6 @@ Uses SQLite in-memory for PHPUnit (see `phpunit.xml`); API integration matches M
 
 ---
 
-## Assignment PDF
-
-Full brief: **`ShopEase_BD_Task_Assignment.pdf.pdf`** in the repository root.
-
----
-
 ## License
 
 Educational / assignment use unless otherwise specified by the course or employer.
