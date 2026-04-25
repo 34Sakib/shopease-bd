@@ -41,11 +41,6 @@ class SalesExporter
         return $rows;
     }
 
-    /**
-     * Write a two-sheet XLSX ("Sales Data" + "Summary") to the given path.
-     *
-     * @param  array<string, mixed>  $filters
-     */
     public function writeXlsx(string $absolutePath, array $filters): int
     {
         $writer = new XlsxWriter();

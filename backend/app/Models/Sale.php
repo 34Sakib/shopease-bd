@@ -58,9 +58,6 @@ class Sale extends Model
         return $query;
     }
 
-    /**
-     * @param  array{branch?:string|null, category?:string|null, payment_method?:string|null, from?:string|null, to?:string|null}  $filters
-     */
     public function scopeApplyFilters(Builder $query, array $filters): Builder
     {
         return $query

@@ -45,21 +45,6 @@ class SaleNormalizer
         return $normalized;
     }
 
-    /**
-     * Parse a date string written in one of three supported formats:
-     *
-     *   - d/m/Y   (e.g. "25/12/2023") — slashes
-     *   - Y-m-d   (e.g. "2023-12-25") — dashes, year first
-     *   - m-d-Y   (e.g. "12-25-2023") — dashes, year last
-     *
-     * Disambiguation rule: the separator + year position fully determine the
-     * format. Slashes are always interpreted as d/m/Y; dashes with a 4-digit
-     * leading segment are Y-m-d; dashes otherwise are m-d-Y.
-     *
-     * This means an input like "01-02-2026" is unambiguously treated as
-     * m-d-Y (January 2, 2026). Data entered in d-m-Y with dashes would be
-     * misinterpreted; this trade-off is documented in the README.
-     */
     public function normalizeDate(mixed $raw): string
     {
         if (! is_string($raw) && ! is_numeric($raw)) {

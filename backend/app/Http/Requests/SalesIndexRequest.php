@@ -25,7 +25,6 @@ class SalesIndexRequest extends FormRequest
         ];
     }
 
-    /** @return array<string, mixed> */
     public function filters(): array
     {
         return $this->only(['branch', 'category', 'payment_method', 'from', 'to']);

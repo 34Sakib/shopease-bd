@@ -134,11 +134,6 @@ class SalesImporter
         ];
     }
 
-    /**
-     * Yield associative rows keyed by canonical column names.
-     *
-     * @return LazyCollection<int, array<string, mixed>>
-     */
     private function streamRows(string $absolutePath, string $extension): LazyCollection
     {
         $extension = strtolower($extension);
@@ -214,7 +209,6 @@ class SalesImporter
         });
     }
 
-    /** @return array<string, int> */
     private function buildHeaderMap(array $headers): array
     {
         $map = [];
@@ -227,7 +221,6 @@ class SalesImporter
         return $map;
     }
 
-    /** @return array<string, mixed> */
     private function toCanonicalRow(array $cells, array $map): array
     {
         $out = [];

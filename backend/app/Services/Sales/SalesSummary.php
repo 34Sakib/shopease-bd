@@ -7,23 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class SalesSummary
 {
-    /**
-     * Revenue = SUM(quantity * unit_price * (1 - discount_pct)).
-     * Uses already-normalized columns so discount_pct is guaranteed to be 0..1.
-     */
     private const REVENUE_EXPR = 'quantity * unit_price * (1 - discount_pct)';
 
-    /**
-     * @param  array<string, mixed>  $filters
-     * @return array{
-     *   total_revenue: float,
-     *   total_quantity: int,
-     *   total_rows: int,
-     *   average_order_value: float,
-     *   top_products: list<array{product_name:string, revenue:float, quantity:int}>,
-     *   branch_breakdown: list<array{branch:string, rows:int, revenue:float, quantity:int}>
-     * }
-     */
     public function build(array $filters): array
     {
         $base = fn () => Sale::query()->applyFilters($filters);
