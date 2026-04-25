@@ -1,4 +1,4 @@
-# ShopEase BD — Wholesale Sales Platform
+# ShopEase BD - Wholesale Sales Platform
 
 | Part | Stack | Path |
 |------|--------|------|
